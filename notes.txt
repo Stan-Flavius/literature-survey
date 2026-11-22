@@ -1,0 +1,133 @@
+LITERATURE SURVEY NOTES
+
+1. hassan2025sase
+------------------------------------------------------------------------
+Hassan et al. (2025). Agentic Software Engineering: Foundational Pillars and a Research Roadmap.
+PDF file: papers/hassan2025sase.pdf · Source: https://arxiv.org/abs/2509.06216
+
+why it's relevant:
+
+- Gives the main framing for the thesis: structured agent workflows instead of one-off prompting.
+- My app can be described with its vocabulary: actors, processes, artifacts.
+
+what it could be used for:
+
+Introduction and background chapter (what agentic SE is and why structure matters).
+
+
+2. hong2024metagpt
+------------------------------------------------------------------------
+Hong et al. (2024). MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework.
+PDF file: papers/hong2024metagpt.pdf · Source: https://arxiv.org/abs/2308.00352
+why it's relevant:
+
+- Supports role-specialised agents (orchestrator, user-information checker, searcher) with structured hand-offs.
+- Names cascading hallucination across chained agents, a central risk in my design and in the thesis title.
+
+what it could be used for:
+
+Architecture chapter and related work (role-based multi-agent design).
+
+
+3. yao2023react
+------------------------------------------------------------------------
+Yao et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models.
+PDF file: papers/yao2023react.pdf · Source: https://arxiv.org/abs/2210.03629
+why it's relevant:
+
+- The searcher agent follows this reason-then-act loop: look up guidance in the literature, then reason over it.
+- Used as a comparison method in FITTER and as the pattern behind PHA's domain-expert agent.
+
+what it could be used for:
+
+Agent design (searcher agent) and related work.
+
+
+4. heydari2025pha
+------------------------------------------------------------------------
+Heydari et al. (2025). The Anatomy of a Personal Health Agent.
+PDF file: papers/heydari2025pha.pdf · Source: https://arxiv.org/abs/2508.20148
+why it's relevant:
+
+- Closest published example of an orchestrator plus specialist agents in health; a reference for splitting responsibilities.
+- Compares against single-agent and parallel multi-agent baselines on the same backbone, similar to my plain-LLM comparison.
+- Limits: wellness and coaching oriented, not exercise prescription, and no deterministic rule check.
+
+what it could be used for:
+
+Architecture chapter (orchestrator design) and evaluation design.
+
+
+5. li2026fitter
+------------------------------------------------------------------------
+Li et al. (2026). A Guideline-Grounded Multi-Agent Framework for Personalized Exercise Prescription from Clinical and Wearable Data (FITTER).
+PDF file: papers/li2026fitter.pdf · Source: https://arxiv.org/abs/2611.03983 (preprint, not peer reviewed at the time of access)
+why it's relevant:
+
+- Closest work to my idea; its deterministic audit and repair step plays the same role as my rule engine.
+- Ablation: removing the audit caused the largest drop in safety compliance (99.0% to 62.0% in the cancer ablation), more than removing retrieval.
+- Evaluation template: vanilla LLM and other baselines on the same backbone, plus an ablation.
+- Gaps I can address: only one small model (Qwen3.5-9B); the safety checklist comes from the same constraints that drive the system, and clinicians rated safety lower (80.6%) than the model-assessed score (98.5%).
+
+what it could be used for:
+
+Core related work, positioning my contribution, evaluation and ablation design.
+
+
+6. shin2025planfitting
+------------------------------------------------------------------------
+Shin, Hsieh & Kim (2025). PlanFitting: Personalized Exercise Planning with Large Language Model-driven Conversational Agent. CUI '25.
+PDF file: papers/shin2025planfitting.pdf · Source: https://arxiv.org/abs/2309.12555
+why it's relevant:
+
+- Rules in the prompt (150 min/week, cardio and strength balance, rest days) were sometimes still missed, which motivates a separate rule engine.
+- Those rules are simple, checkable examples for my rule engine.
+- Early example of guideline-informed exercise planning with an LLM (RAG, user study with 18 participants).
+
+what it could be used for:
+
+Related work (LLM exercise planning) and example rules.
+
+
+7. lewis2020rag
+------------------------------------------------------------------------
+Lewis et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. NeurIPS 33.
+PDF file: papers/lewis2020rag.pdf · Source: https://arxiv.org/abs/2005.11401
+why it's relevant:
+
+- Basis for the searcher agent: ground plans in the literature instead of the model's memory.
+- My baseline is a plain LLM without retrieval; this paper explains what it lacks. FITTER's ablation shows compliance falling from 99.0% to 82.0% without retrieval.
+
+what it could be used for:
+
+Background on grounding; explaining the baseline and the searcher component.
+
+
+8. huang2024selfcorrect
+------------------------------------------------------------------------
+Huang et al. (2024). Large Language Models Cannot Self-Correct Reasoning Yet. ICLR 2024.
+PDF file: papers/huang2024selfcorrect.pdf · Source: https://arxiv.org/abs/2310.01798
+why it's relevant:
+
+- Justifies checking output with an external rule engine instead of LLM self-review.
+- FITTER cites this line of work for the same reason, and PHA's reflection step is a form of self-refinement, so this gives me a critical view of it.
+- Links to the thesis theme: self-checks may not catch hallucination.
+
+what it could be used for:
+
+Design rationale for the rule engine; limits of LLM self-review.
+
+
+9. zheng2023judge
+------------------------------------------------------------------------
+Zheng et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS 36.
+PDF file: papers/zheng2023judge.pdf · Source: https://arxiv.org/abs/2306.05685
+why it's relevant:
+
+- If I score plans with a judge model, it explains how and which biases to guard against (position, verbosity, self-preference).
+- FITTER and PHA both use LLM autoraters, so it helps me interpret their results.
+- General benchmarks like MT-Bench do not test health safety, so I also need a domain-specific checklist.
+
+what it could be used for:
+
+Evaluation methodology and threats to validity.
