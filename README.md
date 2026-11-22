@@ -7,7 +7,7 @@ The thesis topic is agentic software engineering. The planned application is a m
 
 - [`references.bib`](references.bib): complete bibliographic entries for all sources
 - [`papers/`](papers/): PDF of each source (file name = BibTeX key)
-- [`notes/`](notes/): one note per source: summary, what is relevant to my work, and what it is used for
+- [`notes.txt`](notes/): one note per source: what is relevant to my work, and what it is used for
 
 ## Sources
 
