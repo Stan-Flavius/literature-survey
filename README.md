@@ -11,8 +11,8 @@ The thesis topic is agentic software engineering. The planned application is a m
 
 ## Sources
 
-| Key | Source | PDF | Notes |
-|---|---|---|---|
+| Key | Source | PDF | 
+|---|---|---|
 | hassan2025sase | Hassan et al. (2025). Agentic Software Engineering: Foundational Pillars and a Research Roadmap | [pdf](papers/hassan2025sase.pdf) |
 | hong2024metagpt | Hong et al. (2024). MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework | [pdf](papers/hong2024metagpt.pdf) |
 | yao2023react | Yao et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models | [pdf](papers/yao2023react.pdf) |
